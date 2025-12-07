@@ -1,0 +1,92 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.mainCard {
+  width: 100%;
+  max-width: 500px;
+}
+
+.welcome {
+  font-size: 24px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.description {
+  color: var(--muted-foreground);
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.inputGroup {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.apiKeyError {
+  animation: blinkRed 1s ease-in-out;
+}
+
+@keyframes blinkRed {
+  0%, 100% {
+    border-color: var(--border);
+    background: var(--input);
+  }
+  25%, 75% {
+    border-color: #ff4444;
+    background: rgba(255, 68, 68, 0.1);
+  }
+  50% {
+    border-color: #ff6666;
+    background: rgba(255, 68, 68, 0.15);
+  }
+}
+
+.startButton {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.startButton.initializing {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.shortcutHint {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-left: 4px;
+}
+
+.errorMessage {
+  color: var(--destructive);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.helpText {
+  color: var(--muted-foreground);
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover {
+  opacity: 0.8;
+}

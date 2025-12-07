@@ -5,12 +5,15 @@
     "description": "cheating daddy",
     "main": "src/index.js",
     "scripts": {
-        "start": "electron-forge start",
-        "package": "electron-forge package",
-        "make": "electron-forge make",
+        "start": "npm run build:react && electron-forge start",
+        "package": "npm run build:react && electron-forge package",
+        "make": "npm run build:react && electron-forge make",
         "publish": "electron-forge publish",
         "lint": "echo \"No linting configured\"",
-        "test": "vitest run"
+        "test": "vitest run",
+        "dev": "cd frontend-react && npm run dev",
+        "build:react": "cd frontend-react && npm run build",
+        "typecheck:react": "cd frontend-react && npm run typecheck"
     },
     "keywords": [
         "cheating daddy",
@@ -24,6 +27,10 @@
         "email": "sohambharambe9@gmail.com"
     },
     "license": "GPL-3.0",
+    "engines": {
+        "node": ">=18.0.0",
+        "npm": ">=9.0.0"
+    },
     "dependencies": {
         "@google/genai": "^1.2.0",
         "electron-squirrel-startup": "^1.0.1"

@@ -1,5 +1,6 @@
 # Logs
 src/data
+src/dist
 logs
 *.log
 npm-debug.log*
@@ -36,6 +37,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+frontend-react/node_modules/
 
 # TypeScript v1 declaration files
 typings/
@@ -88,8 +90,13 @@ typings/
 
 # Vite
 .vite/
+frontend-react/dist/
 
 # Electron-Forge
 out/
 .specstory
 .specstory/
+
+# OS specific
+.DS_Store
+Thumbs.db

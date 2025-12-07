@@ -1,0 +1,57 @@
+.appContainer {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.windowContainer {
+  height: 100vh;
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  margin-top: 8px;
+  border-radius: var(--radius);
+  transition: all 0.15s ease-out;
+  background: rgba(24, 24, 27, var(--background-opacity));
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
+}
+
+.mainContent.withBorder {
+  border: 1px solid var(--border);
+}
+
+.mainContent.assistantView {
+  padding: 10px;
+  border: none;
+}
+
+.mainContent.onboardingView {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.viewContainer {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  height: 100%;
+}
+
+.viewContainer.entering {
+  opacity: 0;
+  transform: translateY(10px);
+}

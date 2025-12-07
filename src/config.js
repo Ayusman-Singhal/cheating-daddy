@@ -6,7 +6,24 @@ const os = require('os');
 const DEFAULT_CONFIG = {
     onboarded: false,
     stealthLevel: "balanced",
-    layout: "normal"
+    layout: "normal",
+    // AI Profile
+    profileType: "job-interview",
+    customInstructions: "",
+    // Audio
+    audioMode: "speaker-only",
+    speechLanguage: "en-US",
+    // Interface
+    backgroundTransparency: 80,
+    responseFontSize: 28,
+    // Screen Capture
+    captureInterval: 5,
+    imageQuality: "medium",
+    // Features
+    enableGoogleSearch: true,
+    enableAdvancedMode: false,
+    // Shortcuts (will be merged with actual shortcuts from window.js)
+    shortcuts: {}
 };
 
 // Get the config directory path based on OS
@@ -114,5 +131,6 @@ function getLocalConfig() {
 // Export only the necessary functions
 module.exports = {
     getLocalConfig,
-    writeConfig
+    writeConfig,
+    DEFAULT_CONFIG
 }; 

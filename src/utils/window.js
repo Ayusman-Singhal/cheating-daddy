@@ -40,8 +40,9 @@ function createWindow(sendToRenderer, geminiSessionRef, randomNames = null) {
         skipTaskbar: true,
         hiddenInMissionControl: true,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false, // TODO: change to true
+            nodeIntegration: false,
+            contextIsolation: true,
+            preload: path.join(__dirname, '../preload.js'),
             backgroundThrottling: false,
             enableBlinkFeatures: 'GetDisplayMedia',
             webSecurity: true,
@@ -75,7 +76,11 @@ function createWindow(sendToRenderer, geminiSessionRef, randomNames = null) {
         mainWindow.setAlwaysOnTop(true, 'screen-saver', 1);
     }
 
-    mainWindow.loadFile(path.join(__dirname, '../index.html'));
+    // Load React frontend
+    mainWindow.loadFile(path.join(__dirname, '../dist/index.html'));
+
+    // Show window immediately
+    mainWindow.show();
 
     // Set window title to random name if provided
     if (randomNames && randomNames.windowTitle) {

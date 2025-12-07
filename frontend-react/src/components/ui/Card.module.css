@@ -1,0 +1,39 @@
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--card-foreground);
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: var(--muted-foreground);
+  margin: 8px 0 0 0;
+  line-height: 1.5;
+}
+
+.cardContent {
+  padding: 24px;
+}
+
+.cardFooter {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
